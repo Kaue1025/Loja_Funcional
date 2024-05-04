@@ -8,14 +8,15 @@
     <title>Cadastro</title>
 </head>
 <body>
-   <form action="http://localhost:5000/cadastro" method="post">
+    <form action="http://localhost:5000/cadastro" method="post">
         <img src="/static/src/logo.png" alt="">
-        <p><input type="text" placeholder="Nome"></p>
-        <p><input type="text" name="nm" placeholder="Usuario"></p>
+        <p><input type="text" name="Nome" placeholder="Nome"></p>
+        <p><input type="text" name="nm" id="username" placeholder="Usuário"></p>
         <p><input type="email" name="email" placeholder="Email"></p>
         <p><input type="password" name="pass" placeholder="Senha"></p>
         <p><input type="submit" value="Cadastro"></p>
-        <a href="/">login</a>
+        <a href="/">Login</a>
    </form>
+   
 </body>
 </html>
