@@ -1,0 +1,46 @@
+from flask import Flask, render_template, redirect, url_for, request
+
+app = Flask(__name__)
+diclogin = {}
+
+
+@app.route('/')
+def home():
+    return render_template('login.html')
+
+@app.route('/cad')
+def cad():
+    return render_template('cadastro.html')
+
+@app.route('/success/<name>')
+def success(name):
+    return render_template('index.html', name=name)
+
+@app.route('/fail')
+def fail():
+    return render_template('login.html', teste=True)
+
+@app.route('/login', methods =['POST','GET'])
+def login():
+    if request.method == 'POST':
+        for linha in open('info.txt'):
+            linha_list = linha.strip().split('/')
+            diclogin[linha_list[0]] = linha_list[1]
+            user = request.form['nm']
+            senha = request.form['pass']
+
+        if user in diclogin and senha ==diclogin[user]:
+            return redirect(url_for('success',name = user))
+        else:
+            return redirect(url_for('fail'))
+        
+        
+@app.route('/cadastro', methods=['POST'])
+def cadastro():
+    User = request.form['nm']
+    senha = request.form['pass']
+    with open('info.txt', 'a') as arquivo:
+        arquivo.write(f"\n{User}/{senha}") #para colocar váriavel dentro dos parenteses
+    return redirect(url_for('success', name=User))
+
+app.run(debug=True)

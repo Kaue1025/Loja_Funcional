@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/login.css">
+    <link rel="icon" href="/static/src/icone.png" type="image/png">
+    <title>Login</title>
+</head>
+<body>
+    <style>
+        form{
+            margin-top: 150px;
+        }
+    </style>
+    <form action="http://localhost:5000/login" method="post">
+        <img src="/static/src/logo.png" class="logo">
+        <p><input type="text" name="nm"  placeholder="Usuario"></p>
+        <p><input type="password" name="pass" placeholder="Senha"></p>
+        <p><input type="submit" value="Entrar"></p>
+        <a href="/cad">cadastre-se</a>
+    </form>
+</body>
+</html>

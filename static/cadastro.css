@@ -1,0 +1,41 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5c88c7;
+    margin: 0px;
+    padding: 0px;
+}
+
+form{
+    background-color:#76a4ef;
+    border: solid black 3px;
+    margin: 80px;
+    padding: 60px 60px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+a, p{
+    color: #000000;
+    text-decoration: none;
+}
+
+h4{
+    color: white;
+    font-size: 30px;
+    font-family: 'Trebuchet MS';
+}
+
+input{
+    border-radius: 15px;
+    padding: 11px 20px;
+    outline: 0;
+}
+
+img{
+    width: 250px;
+    height: 200px;
+}
+
+
