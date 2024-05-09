@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/src/icone.png" type="image/png">
+    <title>Loja Do Construtor</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <img src="/static/src/logo.png" alt="Logo da Loja">
+        </div>
+        <h1 class="teste">Loja do Construtor</h1>
+        <div class="header-icons">
+            <a href="#">
+            <img src="/static/src/carrinho-de-compras-de-design-xadrez.png" alt="Ícone de carrinho de compras" onclick="toggleCarrinho()">
+        </a>
+            <a href="#">
+            <img src="/static/src/do-utilizador.png" alt="Ícone de perfil" id="icone-perfil" onclick="toggleMenu()">
+        </a>
+        </div>
+    </header>
+
+    <div class="carrinho">
+        <button  onclick="toggleCarrinho()">Fechar</button>
+    </div>
+    
+
+    <div id="menu-lateral">
+        <ul>
+            <li>
+                {{name}}
+            </li>
+            <li>
+                {{email}}
+            </li>
+            <li>
+                3
+            </li>
+            <li>
+                Quantidade de compras
+            </li>
+        </ul>
+        <button onclick="toggleMenu()" id="fechar-menu">Fechar Menu</button>
+      </div>
+
+      
+    <div class="principal">
+        <div id="carrinho"></div>
+    <div class="produtos">
+        <div class="produto">
+            <img src="/static/src/arame.png" class="tamanho1">
+            <p>Arame Farpado Motto Belgo® - 500m</p>
+            <span>$342,11</span>
+            <button type="button" class="adicionar-carrinho">Comprar</button>
+        </div>
+            <div class="produto">
+                <img src="/static/src/caixa_ferramenta.png">
+                <p>Jogo de Ferramentas Oficina Master com Chaves Combinadas com Catraca</p>
+                <span>$1199,90</span>
+                <button type="button">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="/static/src/caixaF.png">
+                <p class="descricao_produto">Carrinho Vermelho para Ferramentas com 7 Gavetas</p>
+                <span>$3233,00</span>
+                <button type="button">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="/static/src/carrinho.jpg" class="tamanho1">
+                <p class="descricao_produto">Carrinho de Mão Tramontina com Caçamba Extrafunda Plástica Laranja 110 L, Braço de Madeira e Pneu com Câmara</p>
+                <span>R$ 424,65</span>
+                <button type="button">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="/static/src/escada.png">
+                <p class="descricao_produto">Escada Articulada 4x4 com 16 Degraus de Alumínio</p>
+                <span>$488,90</span>
+                <button type="button">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="/static/src/makita.png">
+                <p class="descricao_produto">Serra Mármore com 2 Discos 110mm 1300W 220V Makita</p>
+                <span>$359,99</span>
+                <button type="button">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="/static/src/furadeira.png">
+                <p class="descricao_produto">Furadeira de Impacto Vel. Variável e Reversível 1/2 Pol. 760W com Kit de Broca</p>
+                <span>$484,73</span>
+                <button type="button">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="/static/src/maleta.png">
+                <p class="descricao_produto">Jogo de Ferramentas com Maleta 186 Peças Bumafer</p>
+                <span>$698,99</span>
+                <button type="button">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="/static/src/solda.png">
+                <p class="descricao_produto">Máquina de solda mig/mag smashweld 277x 250 amp</p>
+                <span>$6.859,96</span>
+                <button type="button">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="/static/src/esmilha.png">
+                <p class="descricao_produto">Esmerilhadeira Angular GWS700 4.1/2" 710W 127V Bosch</p>
+                <span>$289,99</span>
+                <button type="button">Comprar</button>
+            </div>
+
+            <div class="produto">
+                <img src="/static/src/furadeira.png">
+                <p class="descricao_produto">TESTE</p>
+                <span>$6.859,96</span>
+                <button type="button">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="/static/src/furadeira.png">
+                <p class="descricao_produto">TESTE</p>
+                <span>$289,99</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2024 Kaue Pazóte.<br> Todos os direitos reservados.</p>
+        </footer>
+        
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
