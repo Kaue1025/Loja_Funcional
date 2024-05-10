@@ -89,9 +89,17 @@ h1 {
     width: 120px;
     margin-bottom: 5px;
 }
+
 .carrinho-container {
     position: relative;
     display: flex;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4c70a2;
 }
 
 .produtos {

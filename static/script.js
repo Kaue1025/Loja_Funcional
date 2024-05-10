@@ -27,33 +27,5 @@ function toggleMenu() {
 }
 
 
-  document.addEventListener("DOMContentLoaded", function() {
-    const inputPesquisa = document.getElementById("pesquisa");
-    const produtosLista = document.querySelectorAll(".produtos .produto");
-    const produtosContainer = document.querySelector('.produtos');
-    let algumProdutoEncontrado = false; 
-    let nenhumitempesquisado = true;
-    inputPesquisa.addEventListener("input", function() {
-        const termoPesquisa = inputPesquisa.value.trim().toLowerCase();
-        produtosLista.forEach(function(produto) {
-            const textoProduto = produto.textContent.toLowerCase();
-            if (termoPesquisa === "" || textoProduto.includes(termoPesquisa)) {
-                produto.style.display = "";
-                algumProdutoEncontrado = true;
-            } else {
-                produto.style.display = "none";
-            }
-        });
-        if (algumProdutoEncontrado) {
-              produtosContainer.style.height = 'calc(100vh - 200px)'; // problema nesse filho de uma vadia
-        } else{
-          produtosContainer.style.height = '100%';
-        }
-    });
-
-    
-  });
-
-
 
 
