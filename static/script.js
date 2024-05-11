@@ -12,7 +12,6 @@ function toggleMenu() {
   }
 }
 
-
   function toggleCarrinho() {
     const carrinho = document.querySelector('.carrinho');
   
@@ -26,6 +25,64 @@ function toggleMenu() {
     }
 }
 
+
+let cart = [];
+let total = 0;
+
+function adicionarCarrinho(imagem, nomeProduto, preco) {
+  const item = { imagem: imagem, nome: nomeProduto, preco: parseFloat(preco) };
+  cart.push(item);
+  renderizarCarrinho();
+}
+
+function renderizarCarrinho() {
+  const carrinho = document.querySelector('.carrinho ul');
+  carrinho.innerHTML = '';
+  total = 0;
+
+  cart.forEach((item, index) => {
+    const listItem = document.createElement('li');
+
+    const imagemProduto = document.createElement('img');
+    imagemProduto.src = item.imagem;
+    imagemProduto.alt = item.nome;
+    listItem.appendChild(imagemProduto);
+
+    const infoProduto = document.createElement('div');
+    infoProduto.textContent = `${item.nome} - $${item.preco.toFixed(2)}`;
+    listItem.appendChild(infoProduto);
+
+    const removerBotao = document.createElement('button');
+    removerBotao.textContent = 'Remover';
+    removerBotao.addEventListener('click', () => removerItemCarrinho(index));
+    listItem.appendChild(removerBotao);
+
+    total += item.preco;
+    carrinho.appendChild(listItem);
+  });
+
+  // Exibe o valor total
+  const totalElement = document.createElement('div');
+  totalElement.textContent = `Total: $${total.toFixed(2)}`;
+  carrinho.appendChild(totalElement);
+}
+
+function removerItemCarrinho(index) {
+  cart.splice(index, 1);
+  renderizarCarrinho();
+}
+
+const botoesAdicionar = document.querySelectorAll('.adicionar-carrinho');
+botoesAdicionar.forEach(botao => {
+  botao.addEventListener('click', () => {
+    const produtoElemento = botao.parentElement;
+    const produtoImagem = produtoElemento.querySelector('img').getAttribute('src');
+    const produtoNome = produtoElemento.querySelector('p').textContent;
+    const preco = produtoElemento.querySelector('span').textContent;
+    const precoNumerico = parseFloat(preco.replace('$', ''));
+    adicionarCarrinho(produtoImagem, produtoNome, precoNumerico);
+  });
+});
 
 
 
